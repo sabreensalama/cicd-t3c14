@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "install awscli"
-          command: sudo apt install awscli
+          command: ls -l
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
