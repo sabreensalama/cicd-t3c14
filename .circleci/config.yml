@@ -16,9 +16,9 @@ jobs:
       - checkout
       - run:
           name: "install awscli"
-          command: |
+          shell: |
             ls -l
-            "echo hello"
+            echo hello
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
