@@ -1,29 +1,17 @@
 version: 2.1
 
-commands:
-  print_command:
-    steps:
-      - run: 
-          name: on error
-          command: echo "Hello this is command"
-
-
 jobs:
   my_job:
     docker:
       - image: circleci/node:13.8.0
     steps:
-    - print_command
-    
-  my_job1:
-    docker:
-      - image: circleci/node:13.8.0
-    steps:
-    - print_command    
-    
+      - run: exit 1
+      - run:
+          name: on error
+          command: echo "Hello Error!"
+          when: on_fail
 
 workflows:
   my_workflow:
     jobs:
       - my_job
-      - my_job1
